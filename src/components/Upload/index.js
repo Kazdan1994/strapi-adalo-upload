@@ -1,24 +1,46 @@
-import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import React from 'react';
+import {useDropzone} from 'react-dropzone';
 
-class Upload extends Component {
-	render() {
-		const { color, text } = this.props
+const Upload = ({
+                  label = 'upload',
+                  accept = '',
+                  refId,
+                  reference,
+                  field,
+                  source = '',
+                  url,
+                }) => {
+  const upload = (acceptedFiles) => {
+    const form = new FormData();
 
-		return (
-			<View style={styles.wrapper}>
-				<Text style={{ color }}>{text}</Text>
-			</View>
-		)
-	}
-}
+    Array.from(acceptedFiles).map((file) => {
+      form.append('files', file);
+    })
 
-const styles = StyleSheet.create({
-	wrapper: {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-	}
-})
+    form.append('ref', reference);
+    form.append('refId', refId);
+    form.append('field', field);
+    form.append('source', source);
 
-export default Upload
+    fetch(url, {
+      method: 'POST',
+      body: form,
+    });
+  }
+
+  const {getRootProps, getInputProps} = useDropzone({
+    accept,
+    onDrop: async (acceptedFiles) => {
+      await upload(acceptedFiles);
+    },
+  });
+
+  return (
+    <div {...getRootProps()} className="d-inline btn btn-primary">
+      {!label ? null : <p className="text-white">{label}</p>}
+      <input {...getInputProps()} />
+    </div>
+  );
+};
+
+export default Upload;

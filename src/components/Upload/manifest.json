@@ -1,21 +1,41 @@
 {
   "displayName": "Upload",
-  "defaultWidth": 160,
-  "defaultHeight": 24,
   "components": "./index.js",
   "icon": "./example-thumbnail.png",
   "props": [
     {
-      "name": "text",
-      "displayName": "Text",
+      "name": "label",
+      "displayName": "The label of the button",
       "type": "text",
-      "default": "Happy Hacking"
+      "defaultText": "upload"
     },
     {
-      "name": "color",
-      "displayName": "Color",
-      "type": "color",
-      "default": "#00A898"
+      "name": "refId",
+      "displayName": "The ID of the entry which the file(s) will be linked to",
+      "type": "text"
+    },
+    {
+      "name": "reference",
+      "displayName": "The name of the model which the file(s) will be linked to",
+      "type": "text"
+    },
+    {
+      "name": "field",
+      "displayName": "The field of the entry which the file(s) will be precisely linked to",
+      "type": "text",
+      "defaultText": "image"
+    },
+    {
+      "name": "source",
+      "displayName": "(optional): The name of the plugin where the model is located",
+      "type": "text",
+      "defaultText": ""
+    },
+    {
+      "name": "url",
+      "displayName": "ApiUrl",
+      "type": "text",
+      "defaultText": ""
     }
   ]
 }

@@ -1,10 +1,10 @@
 {
   "name": "strapi-adalo-upload",
-  "description": "",
+  "description": "A component for uploading files to an external strapi API via adalo",
   "version": "1.0.0",
   "main": "index.js",
   "license": "ISC",
-  "author": "",
+  "author": "Arthur Jacquemin",
   "scripts": {
     "start": "adalo dev",
     "login": "adalo login",
@@ -22,9 +22,13 @@
   },
   "devDependencies": {
     "@adalo/cli": "^0.0.41",
-    "react": "^16.9.0",
-    "react-art": "^16.6.0",
-    "react-dom": "^16.9.0",
-    "react-native-web": "^0.9.5"
+    "react": "^17.0.2",
+    "react-art": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native-web": "^0.16.2"
+  },
+  "dependencies": {
+    "react-dropzone": "^11.3.2",
+    "react-native": "^0.64.1"
   }
 }
