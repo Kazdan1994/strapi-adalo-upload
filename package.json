@@ -1,0 +1,33 @@
+{
+  "name": "upload",
+  "version": "1.0.2",
+  "main": "index.js",
+  "license": "ISC",
+  "author": "Arthur Jacquemin",
+  "description": "Upload to strapi",
+  "scripts": {
+    "start": "adalo dev",
+    "login": "adalo login",
+    "publish": "adalo publish"
+  },
+  "adalo": {
+    "logo": "./example-logo.png",
+    "displayName": "Upload",
+    "components": [
+      {
+        "name": "Upload",
+        "manifest": "./src/components/Upload/manifest.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@adalo/cli": "^0.0.42",
+    "react": "^17.0.2",
+    "react-art": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-native-web": "^0.17.0"
+  },
+  "dependencies": {
+    "react-dropzone": "^11.3.2"
+  }
+}

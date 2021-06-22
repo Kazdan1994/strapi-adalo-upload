@@ -1,0 +1,41 @@
+{
+  "displayName": "Upload",
+  "defaultWidth": 300,
+  "defaultHeight": 300,
+  "components": "./index.js",
+  "icon": "./placeholder.png",
+  "props": [
+    {
+      "name": "refId",
+      "displayName": "RefId",
+      "type": "text"
+    },
+    {
+      "name": "reference",
+      "displayName": "Ref",
+      "type": "text"
+    },
+    {
+      "name": "field",
+      "displayName": "Field",
+      "type": "text",
+      "defaultText": "image"
+    },
+    {
+      "name": "source",
+      "displayName": "Source",
+      "type": "text"
+    },
+    {
+      "name": "value",
+      "displayName": "Default Value",
+      "type": "text"
+    },
+    {
+      "name": "url",
+      "displayName": "ApiUrl",
+      "type": "text",
+      "defaultText": "/upload"
+    }
+  ]
+}
